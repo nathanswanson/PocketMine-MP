@@ -33,6 +33,7 @@ use pocketmine\entity\Living;
 use pocketmine\entity\object\FallingBlock;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\item\Durable;
 use pocketmine\item\Item;
 use pocketmine\math\AxisAlignedBB;
 use pocketmine\math\Facing;
