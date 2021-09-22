@@ -24,6 +24,7 @@ declare(strict_types=1);
 namespace pocketmine\block;
 
 use InvalidArgumentException;
+use pocketmine\block\Durable;
 use pocketmine\block\inventory\AnvilInventory;
 use pocketmine\block\utils\BlockDataSerializer;
 use pocketmine\block\utils\Fallable;
@@ -108,7 +109,7 @@ class Anvil extends Transparent implements Fallable{
 					if($blockEntity->fallDistance > 1){
 						//If player has helmet do 1/4 the normal damage
 						$helmet = $ent->getArmorInventory()->getHelmet();
-						if($helmet !== null && !$helmet->isNull()){
+						if($helmet != null && !$helmet->isNull() && $helmet instanceof Durable){
 							$damageDone = $blockEntity->fallDistance * 0.5;
 							$ent->damageItem($helmet, (int) $damageDone);
 						}else{
