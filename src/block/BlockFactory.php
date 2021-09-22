@@ -554,7 +554,7 @@ class BlockFactory{
 
 		//region --- auto-generated TODOs for bedrock-1.11.0 ---
 		//TODO: minecraft:bubble_column
-		//TODO: minecraft:campfire
+		$this->register(new CampFire(new BID(Ids::CAMPFIRE, 0, ItemIds::CAMPFIRE), "Campfire", BlockBreakInfo::instant()));
 		//TODO: minecraft:cartography_table
 		//TODO: minecraft:cauldron
 		//TODO: minecraft:chain_command_block
