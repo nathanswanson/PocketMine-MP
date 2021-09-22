@@ -34,6 +34,7 @@ use pocketmine\block\tile\Bed as TileBed;
 use pocketmine\block\tile\Bell as TileBell;
 use pocketmine\block\tile\BlastFurnace as TileBlastFurnace;
 use pocketmine\block\tile\BrewingStand as TileBrewingStand;
+use pocketmine\block\tile\Cauldron as TileCauldron;
 use pocketmine\block\tile\Chest as TileChest;
 use pocketmine\block\tile\Comparator as TileComparator;
 use pocketmine\block\tile\DaylightSensor as TileDaylightSensor;
@@ -556,7 +557,7 @@ class BlockFactory{
 		//TODO: minecraft:bubble_column
 		//TODO: minecraft:campfire
 		//TODO: minecraft:cartography_table
-		//TODO: minecraft:cauldron
+		$this->register(new Cauldron(new BID(Ids::CAULDRON_BLOCK, 0, ItemIds::CAULDRON, TileCauldron::class), "Cauldron", BlockBreakInfo::instant()));
 		//TODO: minecraft:chain_command_block
 		//TODO: minecraft:chorus_flower
 		//TODO: minecraft:chorus_plant
