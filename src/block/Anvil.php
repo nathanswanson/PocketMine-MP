@@ -24,7 +24,6 @@ declare(strict_types=1);
 namespace pocketmine\block;
 
 use InvalidArgumentException;
-use pocketmine\block\Durable;
 use pocketmine\block\inventory\AnvilInventory;
 use pocketmine\block\utils\BlockDataSerializer;
 use pocketmine\block\utils\Fallable;
