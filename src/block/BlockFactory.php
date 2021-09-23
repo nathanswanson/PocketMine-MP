@@ -557,7 +557,7 @@ class BlockFactory{
 		//TODO: minecraft:bubble_column
 		//TODO: minecraft:campfire
 		//TODO: minecraft:cartography_table
-		$this->register(new Cauldron(new BID(Ids::CAULDRON_BLOCK, 0, ItemIds::CAULDRON, TileCauldron::class), "Cauldron", BlockBreakInfo::instant()));
+		$this->register(new Cauldron(new BIDFlattened(Ids::CAULDRON_BLOCK, [Ids::LAVA_CAULDRON], 0,ItemIds::CAULDRON, TileCauldron::class), "Cauldron", BlockBreakInfo::instant()));
 		//TODO: minecraft:chain_command_block
 		//TODO: minecraft:chorus_flower
 		//TODO: minecraft:chorus_plant

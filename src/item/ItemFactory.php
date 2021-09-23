@@ -186,6 +186,7 @@ class ItemFactory{
 		$this->register(new ItemBlock(new ItemIdentifier(ItemIds::BIRCH_DOOR, 0), VanillaBlocks::BIRCH_DOOR()));
 		$this->register(new ItemBlock(new ItemIdentifier(ItemIds::BREWING_STAND, 0), VanillaBlocks::BREWING_STAND()));
 		$this->register(new ItemBlock(new ItemIdentifier(ItemIds::CAKE, 0), VanillaBlocks::CAKE()));
+		$this->register(new ItemBlock(new ItemIdentifier(ItemIds::CAULDRON, 0), VanillaBlocks::CAULDRON()));
 		$this->register(new ItemBlock(new ItemIdentifier(ItemIds::COMPARATOR, 0), VanillaBlocks::REDSTONE_COMPARATOR()));
 		$this->register(new ItemBlock(new ItemIdentifier(ItemIds::DARK_OAK_DOOR, 0), VanillaBlocks::DARK_OAK_DOOR()));
 		$this->register(new ItemBlock(new ItemIdentifier(ItemIds::FLOWER_POT, 0), VanillaBlocks::FLOWER_POT()));

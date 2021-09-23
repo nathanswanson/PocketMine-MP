@@ -164,6 +164,7 @@ final class StringToItemParser{
 		$result->registerBlock("carrot_block", fn() => VanillaBlocks::CARROTS());
 		$result->registerBlock("carrots", fn() => VanillaBlocks::CARROTS());
 		$result->registerBlock("carved_pumpkin", fn() => VanillaBlocks::CARVED_PUMPKIN());
+		$result->registerBlock("cauldron", fn() => VanillaBlocks::Cauldron());
 		$result->registerBlock("cauldron_block", fn() => VanillaBlocks::Cauldron());
 		$result->registerBlock("chemical_heat", fn() => VanillaBlocks::CHEMICAL_HEAT());
 		$result->registerBlock("chemistry_table", fn() => VanillaBlocks::COMPOUND_CREATOR());

@@ -103,7 +103,7 @@ use function assert;
  * @method static Carpet CARPET()
  * @method static Carrot CARROTS()
  * @method static CarvedPumpkin CARVED_PUMPKIN()
- * @method static Cauldron CAULDRON_BLOCK()
+ * @method static Cauldron CAULDRON()
  * @method static ChemicalHeat CHEMICAL_HEAT()
  * @method static Chest CHEST()
  * @method static SimplePillar CHISELED_QUARTZ()
@@ -670,7 +670,7 @@ final class VanillaBlocks{
 		self::register("carpet", $factory->get(171, 0));
 		self::register("carrots", $factory->get(141, 0));
 		self::register("carved_pumpkin", $factory->get(410, 0));
-		self::register("cauldron_block", $factory->get(118, 0));
+		self::register("cauldron", $factory->get(118, 0));
 		self::register("chemical_heat", $factory->get(192, 0));
 		self::register("chest", $factory->get(54, 2));
 		self::register("chiseled_quartz", $factory->get(155, 1));
