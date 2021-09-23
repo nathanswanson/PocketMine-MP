@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace pocketmine\block\tile;
 
-use pocketmine\block\PackedIce;
 use pocketmine\inventory\SimpleInventory;
+use pocketmine\item\Potion;
 use pocketmine\math\Vector3;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\world\World;
@@ -18,16 +18,12 @@ class Cauldron extends Spawnable implements Container, Nameable{
 	public const TAG_POTION_TYPE = "PotionType";
 	public const TAG_CUSTOM_COLOR = "CustomColor";
 
-	/** @var SimpleInventory */
 	protected SimpleInventory $inventory;
 
-	/** @var int  */
 	private int $potionID = -1;
 
-	/** @var int  */
 	private int $potionType = -1;
 
-	/** @var int|null */
 	private ?int $customColor;
 
 	public function __construct(World $world, Vector3 $pos){
@@ -42,7 +38,6 @@ class Cauldron extends Spawnable implements Container, Nameable{
 			$this->customColor = $nbt->getInt(self::TAG_CUSTOM_COLOR, $this->customColor);
 		}
 
-
 		$this->loadName($nbt);
 		$this->loadItems($nbt);
 	}
@@ -54,28 +49,26 @@ class Cauldron extends Spawnable implements Container, Nameable{
 			$nbt->setShort(self::TAG_CUSTOM_COLOR, $this->customColor);
 		}
 
-
 		$this->saveName($nbt);
 		$this->saveItems($nbt);
 	}
 
-	/**
-	 * @return SimpleInventory
-	 */
 	public function getRealInventory(): SimpleInventory{
 		return $this->getInventory();
 	}
 
-	/**
-	 * @return SimpleInventory
-	 */
 	public function getInventory(): SimpleInventory{
 		return $this->inventory;
 	}
 
-	/**
-	 * @return string
-	 */
+	public function getPotion(): ?Potion {
+		return ($this->potionType == -1 && $this->potionID == -1 ? null : new Potion()) ;
+	}
+
+	public function setPotion(?Potion $potion): void {
+
+	}
+
 	public function getDefaultName() : string{
 		return "Cauldron";
 	}

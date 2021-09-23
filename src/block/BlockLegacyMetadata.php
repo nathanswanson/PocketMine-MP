@@ -60,6 +60,10 @@ final class BlockLegacyMetadata{
 
 	public const BUTTON_FLAG_POWERED = 0x08;
 
+	public const CAULDRON_LIQUID_LAVA = 0;
+	public const CAULDRON_LIQUID_WATER = 1;
+	public const CAULDRON_LIQUID_POWDER_SNOW = 2;
+
 	public const CHEMISTRY_COMPOUND_CREATOR = 0;
 	public const CHEMISTRY_MATERIAL_REDUCER = 4;
 	public const CHEMISTRY_ELEMENT_CONSTRUCTOR = 8;

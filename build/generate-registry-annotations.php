@@ -83,9 +83,11 @@ function generateMethodAnnotations(string $namespaceName, array $members) : stri
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 foreach(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($argv[1], \FilesystemIterator::SKIP_DOTS | \FilesystemIterator::CURRENT_AS_PATHNAME)) as $file){
+
 	if(substr($file, -4) !== ".php"){
 		continue;
 	}
+
 	$contents = file_get_contents($file);
 	if($contents === false){
 		throw new \RuntimeException("Failed to get contents of $file");
@@ -94,11 +96,16 @@ foreach(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($argv[1],
 	if(preg_match("/^namespace (.+);$/m", $contents, $matches) !== 1 || preg_match('/^((final|abstract)\s+)?class /m', $contents) !== 1){
 		continue;
 	}
+
 	$shortClassName = basename($file, ".php");
 	$className = $matches[1] . "\\" . $shortClassName;
 	if(!class_exists($className)){
+		echo "$shortClassName\n";
+		echo "$className\n";
+		echo "file dddddddin $file\n";
 		continue;
 	}
+
 	$reflect = new \ReflectionClass($className);
 	$docComment = $reflect->getDocComment();
 	if($docComment === false || preg_match("/^\s*\*\s*@generate-registry-docblock$/m", $docComment) !== 1){
