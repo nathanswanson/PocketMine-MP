@@ -21,8 +21,8 @@ class Cauldron extends Transparent{
 	private ?Potion $potion;
 
 	public function __construct(BlockIdentifier $idInfo, string $name, BlockBreakInfo $breakInfo){
-		$this->fillLevel = 7;
-		$this->cauldronLiquid = CauldronLiquidType::WATER();
+		$this->fillLevel = 0;
+		$this->cauldronLiquid = CauldronLiquidType::LAVA();
 		parent::__construct($idInfo, $name, $breakInfo);
 	}
 
@@ -47,18 +47,19 @@ class Cauldron extends Transparent{
 	}
 
 	public function readStateFromData(int $id, int $stateMeta) : void{
-		$this->fillLevel = $stateMeta & 0x04;
+		$this->fillLevel = $stateMeta & 0x7;
 		#0x24
 		$this->cauldronLiquid = CauldronLiquidType::POWDER_SNOW();
 	}
 
 	protected function writeStateToMeta() : int{
-		return 0b01111;
+		return $this->fillLevel;
 	}
 
 	public function onInteract(Item $item, int $face, Vector3 $clickVector, ?Player $player = null) : bool{
 		//if($item instanceof LiquidBucket) {
-			$this->fillLevel = 6;
+			$this->fillLevel++;
+			$this->position->getWorld()->setBlock($this->position, $this);
 		//}
 
 		return true;
